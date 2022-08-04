@@ -1,0 +1,25 @@
+{
+    "name": "Monokle",
+    "version": "0.1.0",
+    "description": "Adds links to Monokle SaaS",
+    "icons": {
+      "256": "images/large-icon-256.png"
+    },
+    "action": {
+      "default_icon": {
+        "16": "images/small-icon-16.png",
+        "24": "images/small-icon-24.png",
+        "32": "images/large-icon-32.png"
+      },
+      "default_title": "Monokle",
+      "default_popup": "popup.html"
+    },
+    "content_scripts": [ {
+      "js": [ "extension.js"],
+      "matches": [ "https://github.com/*" ],
+      "css": ["extension.css"]
+    }],
+    "permissions": [
+    ],
+    "manifest_version": 3
+  }
