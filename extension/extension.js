@@ -1,5 +1,10 @@
 const targetHost = "https://saas.monokle.io/explore/github/";
 
+const svg = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">' +
+    '<path fill-rule="evenodd" clip-rule="evenodd" d="M0 8C0 12.4082 3.59184 16 8 16C12.4082 16 16 12.4082 16 8C16 3.59184 12.4082 0 8 0C3.56851 0 0 3.56851 0 8ZM3.56851 7.09038C3.56851 10.0292 5.94752 12.4315 8.90962 12.4315C11.8484 12.4315 14.2507 10.0525 14.2507 7.09038C14.2507 4.12828 11.8717 1.74927 8.90962 1.74927C5.94752 1.77259 3.56851 4.1516 3.56851 7.09038Z" fill="#24292F"/>' +
+    '<path fill-rule="evenodd" clip-rule="evenodd" d="M8.8864 12.8047C5.73772 12.8047 3.17212 10.2391 3.17212 7.09038C3.17212 3.9417 5.73772 1.3761 8.8864 1.3761C12.0351 1.3761 14.6007 3.9417 14.6007 7.09038C14.6007 10.2624 12.0351 12.8047 8.8864 12.8047ZM8.8864 12.4315C5.94763 12.4315 3.5453 10.0525 3.5453 7.09038C3.5453 4.15161 5.92431 1.74928 8.8864 1.74928C11.8485 1.74928 14.2275 4.12828 14.2275 7.09038C14.2275 10.0525 11.8252 12.4315 8.8864 12.4315Z" fill="#24292F"/>' +
+    '<path fill-rule="evenodd" clip-rule="evenodd" d="M8 16C3.59184 16 0 12.4082 0 8C0 3.59184 3.56851 0 8 0C12.4315 0 16 3.56851 16 8C16 12.4082 12.4315 15.9767 8 16ZM8 15.6035C3.87172 15.6035 0.373178 12.105 0.373178 7.97668C0.373178 3.8484 3.87172 0.373178 8 0.373178C12.1283 0.373178 15.6268 3.87172 15.6268 7.97668C15.6268 12.0816 12.1283 15.6035 8 15.6035Z" fill="#24292F"/> </svg>'
+
 function findCurrentBranch() {
     let defaultBranch = document.querySelector('[title="Switch branches or tags"]');
     return defaultBranch ? defaultBranch.textContent.trim() : 'main';
@@ -44,7 +49,7 @@ function insertMonokleContent() {
                 let gridDiv = document.createElement('div');
                 gridDiv.className = 'BorderGrid-cell';
                 gridDiv.id = 'monokle-info-insert';
-                gridDiv.innerHTML = "<h2 class=\"mb-3 h4\">Monokle</h2><p><a href=''>Learn more about all your Monokle Plug-in features</a> - " +
+                gridDiv.innerHTML = "<h2 class=\"mb-3 h4\">" + svg + " Monokle</h2><p><a href=''>Learn more about all your Monokle Plug-in features</a> - " +
                     "how to explore, validate and preview your yamls, including Helm & Customize, " +
                     "compare your PR to original branches and more.</p>";
 
@@ -75,7 +80,7 @@ function insertMonokleContent() {
 
         let linkDiv = document.createElement('span');
         linkDiv.id = 'monokle-browse-insert';
-        linkDiv.innerHTML = "<a class='" + innerDivClass + "' target='_monokle' href='" + targetUrl + "'>Monokle Explore</a>";
+        linkDiv.innerHTML = "<a class='" + innerDivClass + "' target='_monokle' href='" + targetUrl + "'>" + svg + " Explore</a>";
 
         if (mode === 'explore') {
             try {
