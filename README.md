@@ -1,7 +1,12 @@
 # Monokle Chrome extension
 
-A simple Chrome extension that injects links to Monokle SaaS in "appropriate places" for the 
+A simple Chrome extension that injects links to Monokle in "appropriate places" for the 
 current repo.
+
+Currently supports:
+- Public repos only
+- "Explore" links at the repository, folder and file level
+  - File-level Explore only for YAML files
 
 ## Installation Instructions
 
