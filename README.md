@@ -1,7 +1,7 @@
 # Monokle Chrome extension
 
-A simple Chrome extension that injects a link to Monokle SaaS for the current repository into
-the repo "root" page (see screenshot below).
+A simple Chrome extension that injects links to Monokle SaaS in "appropriate places" for the 
+current repo.
 
 ## Installation Instructions
 

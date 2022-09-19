@@ -102,8 +102,20 @@ function isExplorableFile(blobPath) {
     return false;
 }
 
+// check if the current repo is private
+function isPrivateRepo() {
+    let lockIcon = document.querySelectorAll('#repository-container-header .octicon-lock');
+    return lockIcon && lockIcon.length > 0;
+}
+
 // main method that insert Monokle content
 function insertMonokleContent() {
+    // private repos not supported for now
+    if( isPrivateRepo() ){
+        return;
+    }
+
+
     let url = window.location.href.replace('https://github.com/', '');
 
     let splitUrl = url.split('/').filter(element => element != '');
@@ -170,6 +182,7 @@ function insertMonokleContent() {
     }
 }
 
+// insert content
 insertMonokleContent();
 
 // Github updates pages without reloading - simple hack to detect
