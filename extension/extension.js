@@ -12,12 +12,6 @@ function findCurrentBranch() {
     return defaultBranch ? defaultBranch.textContent.trim() : 'main';
 }
 
-// extract the selected file/folder from the current page - null if not find
-function findCurrentFileOrFolder() {
-    let blobPath = document.querySelector('#blob-path')?.textContent.trim();
-    return blobPath && blobPath.length > 0 ? blobPath : undefined;
-}
-
 // insert text block to right of repository listing
 function insertExplorePanel() {
     // make sure we don't already have a link
@@ -94,7 +88,7 @@ function insertExploreFolderButton(linkDiv) {
     }
 }
 
-// only allow explore of yaml files for now
+// only allow exploration of yaml files for now
 function isExplorableFile(blobPath) {
     if (blobPath) {
         let path = blobPath.toLowerCase();
@@ -121,8 +115,8 @@ function insertMonokleContent() {
     let splitUrl = url.split('/').filter(element => element != '');
     let targetUrl = ''
     let mode = 'explore';
-    let blobPath = findCurrentFileOrFolder();
     let subject = 'repository';
+    let blobPath = '';
 
     // identify which page we're on and create corresponding targetUrl
     if (splitUrl.length > 1) {
@@ -141,27 +135,32 @@ function insertMonokleContent() {
             // branch names can contain '/' - thus the join at the end
             targetUrl = targetHost + owner + "/" + repo + "/branch/" + currentBranch;
             if (splitUrl.length > 2 + branchPaths.length) {
-                targetUrl += "?view=explorer&f=" + encodeURIComponent(splitUrl.slice(2 + branchPaths.length).join('/'))
                 mode = 'folder'
                 subject = 'folder'
+                blobPath = splitUrl.slice(2 + branchPaths.length).join('/');
+                targetUrl += "?view=explorer&f=" + encodeURIComponent(blobPath);
             }
         }
         // looking at specific file
         else if (splitUrl.length > 4 && splitUrl[2] === 'blob') {
             mode = 'file';
             subject = 'file';
-            let view = 'explorer'
-            if( blobPath?.toLowerCase().endsWith('/chart.yaml')){
-                view = 'helm';
+            blobPath = splitUrl.slice(2 + branchPaths.length).join('/');
+
+            let monokleView = 'explorer'
+
+            // special handling for specific files
+            if( blobPath.toLowerCase().endsWith('/chart.yaml')){
+                monokleView = 'helm';
                 subject = 'Helm chart'
             }
-            else if( blobPath?.toLowerCase().endsWith('/kustomization.yaml')){
-                view = 'kustomize';
+            else if( blobPath.toLowerCase().endsWith('/kustomization.yaml')){
+                monokleView = 'kustomize';
                 subject = 'kustomization';
             }
 
-            targetUrl = targetHost + owner + "/" + repo + "/branch/" + currentBranch + "?view=" + view + "&f=" +
-                encodeURIComponent(splitUrl.slice(2 + branchPaths.length).join('/'))
+            targetUrl = targetHost + owner + "/" + repo + "/branch/" + currentBranch + "?view=" + monokleView + "&f=" +
+                encodeURIComponent(blobPath)
         }
     }
 
