@@ -23,9 +23,9 @@ function insertExplorePanel() {
     let gridDiv = document.createElement('div');
     gridDiv.className = 'BorderGrid-cell';
     gridDiv.id = 'monokle-info-insert';
-    gridDiv.innerHTML = "<h2 class=\"mb-3 h4\">" + svg + " Monokle</h2><p><a href=''>Learn more about all your Monokle Plug-in features</a> - " +
-        "how to explore, validate and preview your yamls, including Helm & Customize, " +
-        "compare your PR to original branches and more.</p>";
+    gridDiv.innerHTML = "<h2 class=\"mb-3 h4\">" + svg + " Monokle</h2><p><a target='_blank' href='https://monokle.io'>Learn more about all Monokle features</a> - " +
+        "how to explore, compare, validate and preview your Kubernetes yamls, including Helm & Kustomize, " +
+        "compare your branches and PRs, and much more.</p>";
 
     try {
         let repoInfo = document.querySelectorAll('.BorderGrid-row');
