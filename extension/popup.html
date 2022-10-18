@@ -1,11 +1,39 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Monokle</title>
-        <link rel="stylesheet" href="popup.css">
-        <script type = "text/javascript" src="popup.js"></script>
-    </head>
-    <body style="width:175px;">
-        <h1>Monokle</h1>
-    </body>
+  <head>
+    <title>Monokle</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter&display=fallback"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="popup.css" />
+    <script type="text/javascript" src="popup.js"></script>
+  </head>
+  <body>
+    <main>
+      <header><img id="logo" src="./images/monokle.svg" /></header>
+      <h1>Validate your yaml files live from GitHub</h1>
+
+      <img id="figure" src="./images/figure.png" />
+
+      <p id="description">
+        Explore, validate and preview yaml files, including Helm & Customize,
+        compare your PR to original branches, create issues for error fixing and
+        more. From your own repositories or any public one!
+      </p>
+
+      <div id="desktop">
+        <p>Round up your experience with Desktop version:</p>
+        <a href="https://monokle.kubeshop.io/download" target="_blank">
+          <img src="./images/desktop.svg" /> Download Monokle Desktop
+        </a>
+      </div>
+
+      <div id="docs">
+        <a href="https://kubeshop.github.io/monokle/" target="_blank">
+          <img src="./images/question.svg" /> Documentation
+        </a>
+      </div>
+    </main>
+  </body>
 </html>
