@@ -1,15 +1,28 @@
 body {
-  width: 360px;
+  width: 460px;
 }
 
 main {
   display: flex;
   flex-direction: column;
-  margin: 6px 24px;
+  padding: 18px 24px;
+  gap: 12px;
 }
 
 header {
   padding: 4px 0;
+}
+
+header {
+  display: flex;
+  align-items: center;
+}
+
+#title {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  gap: 18px;
 }
 
 #logo {
@@ -22,15 +35,15 @@ h1 {
   margin-top: 8px;
   font-style: normal;
   font-weight: 700;
-  font-size: 24px;
+  font-size: 22px;
   line-height: 29px;
   color: #1d1d1d;
 }
 
 #figure {
   align-self: center;
-  width: 266px;
-  height: 214px;
+  width: 223px;
+  height: 176px;
 }
 
 p {
@@ -40,31 +53,41 @@ p {
   font-size: 13px;
   line-height: 22px;
   color: #24292f;
+  margin: 0;
 }
 
-a {
+#cta-web {
+  color: white;
+  padding: 4px;
+  background-color: #177ddc;
+  width: 172px;
+  height: 26px;
+  font-weight: 400;
+  font-size: 14px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+
+  border-radius: 2px;
+  align-self: center;
+  text-decoration: none;
   display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#cta-desktop {
+  display: flex;
+  align-self: center;
   align-items: center;
   color: #177ddc;
   gap: 12px;
   text-decoration: none;
   font-weight: 600;
   font-size: 14px;
+  margin-top: 8px;
+  margin-bottom: 14px;
 }
 
-#description {
-  margin: 18px auto;
-}
-
-#desktop {
-  display: flex;
-  flex-direction: column;
-}
-
-#desktop > p {
-  margin: 0;
-}
-
-#docs {
-  margin: 24px 0;
+#bold {
+  font-weight: 700;
 }

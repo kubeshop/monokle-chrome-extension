@@ -3,7 +3,7 @@
   <head>
     <title>Monokle</title>
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter&display=fallback"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=fallback"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="popup.css" />
@@ -11,29 +11,38 @@
   </head>
   <body>
     <main>
-      <header><img id="logo" src="./images/monokle.svg" /></header>
-      <h1>Validate your yaml files live from GitHub</h1>
-
-      <img id="figure" src="./images/figure.png" />
+      <header>
+        <div id="title">
+          <img id="logo" src="./images/monokle.svg" />
+          <h1>Kubernetes Configuration Workbench</h1>
+        </div>
+        <img id="figure" src="./images/figure.png" />
+      </header>
 
       <p id="description">
-        Explore, validate and preview yaml files, including Helm & Customize,
-        compare your PR to original branches, create issues for error fixing and
-        more. From your own repositories or any public one!
+        Explore any public GitHub repository; discover, navigate and validate
+        Kubernetes configurations, preview and validate the output of Kustomize
+        and Helm, compare configurations across branches and commits and much
+        more...
       </p>
 
-      <div id="desktop">
-        <p>Round up your experience with Desktop version:</p>
-        <a href="https://monokle.kubeshop.io/download" target="_blank">
-          <img src="./images/desktop.svg" /> Download Monokle Desktop
-        </a>
-      </div>
+      <a id="cta-web" href="https://app.monokle.com" target="_blank"
+        >Go to Monokle Cloud</a
+      >
 
-      <div id="docs">
-        <a href="https://kubeshop.github.io/monokle/" target="_blank">
-          <img src="./images/question.svg" /> Documentation
-        </a>
-      </div>
+      <p id="desktop">
+        <span id="bold">Get Monokle Desktop</span> for configuration templates,
+        YAML editing with interactive OPA validation and Git integration, CRD
+        support, Cluster compare and preview and much more...
+      </p>
+
+      <a
+        id="cta-desktop"
+        href="https://monokle.kubeshop.io/download"
+        target="_blank"
+      >
+        <img src="./images/desktop.svg" /> Download Monokle Desktop
+      </a>
     </main>
   </body>
 </html>
