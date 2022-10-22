@@ -1,7 +1,10 @@
 {
-    "name": "Monokle",
+    "manifest_version": 3,
+    "name": "Monokle Cloud Chrome Extension",
+    "short_name": "Monokle Cloud",
     "version": "0.1.0",
-    "description": "Adds links to Monokle SaaS",
+    "description": "Integrates actions for discovering and exploring Kubernetes resources with Monokle Cloud into the GitHub User Interface",
+    "homepage_url": "https://github.com/kubeshop/monokle-chrome-extension",
     "icons": {
       "256": "images/large-icon-256.png"
     },
@@ -11,7 +14,7 @@
         "24": "images/small-icon-24.png",
         "32": "images/large-icon-32.png"
       },
-      "default_title": "Monokle",
+      "default_title": "Monokle Cloud",
       "default_popup": "popup.html"
     },
     "content_scripts": [ {
@@ -20,6 +23,5 @@
       "css": ["extension.css"]
     }],
     "permissions": [
-    ],
-    "manifest_version": 3
+    ]
   }
