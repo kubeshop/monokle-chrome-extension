@@ -1,4 +1,4 @@
-const targetHost = "https://saas.monokle.io/explore/github/";
+const targetHost = "https://app.monokle.com/explore/github/";
 
 const svg = '<svg style="vertical-align: middle; margin-bottom: 3px; margin-right: 3px" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">' +
     '<path fill-rule="evenodd" clip-rule="evenodd" d="M0 8C0 12.4082 3.59184 16 8 16C12.4082 16 16 12.4082 16 8C16 3.59184 12.4082 0 8 0C3.56851 0 0 3.56851 0 8ZM3.56851 7.09038C3.56851 10.0292 5.94752 12.4315 8.90962 12.4315C11.8484 12.4315 14.2507 10.0525 14.2507 7.09038C14.2507 4.12828 11.8717 1.74927 8.90962 1.74927C5.94752 1.77259 3.56851 4.1516 3.56851 7.09038Z" fill="#24292F"/>' +
